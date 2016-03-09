@@ -1,8 +1,11 @@
-# app/contracts/task.sol
 contract Tasks {
-  uint public task;
+    Task[] public tasks;
 
-  function Tasks() {
-  }
+    struct Task {
+        string title;
+    }
 
+    function create(string _title) {
+        tasks[tasks.length++] = Task({title: _title});
+    }
 }
